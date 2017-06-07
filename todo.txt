@@ -1,0 +1,5 @@
+update socketID pas reconnect
+    disconnect terus
+    
+    TODO bisa langsung ngambil foto sendiri langsung dari aplikasinya
+    
