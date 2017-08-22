@@ -1,7 +1,7 @@
 "use strict";
 
 // Variables
-var docRoot = "/home/aria/Projects/CariMobil/www",
+var docRoot = "/home/aria/Projects/cari-mobil-app/www",
     port = 8081,
     address = "0.0.0.0",
     dbAddress = "0.0.0.0",//'103.10.223.66',
@@ -347,11 +347,12 @@ app.get('/', function (req, res) {
 });
 
 app.get('/iseng', function (req, res) {
-    res.send("IP = " + req.connection.remoteAddress);
-    console.log("IP = " + req.connection.remoteAddress)
     res.setHeader("X-Content-Security-Policy", "img-src 'self' data: https://csi.gstatic.com; script-src 'self' https://maps.googleapis.com");
     res.setHeader("Content-Security-Policy", "img-src 'self' data: https://csi.gstatic.com; script-src 'self' https://maps.googleapis.com");
+    res.send("IP = " + req.connection.remoteAddress);
+    console.log("IP = " + req.connection.remoteAddress)
 });
 // /\ Event Listeners /\
 
 server.listen(port, address)// process.env.OPENSHIFT_NODEJS_IP || process.env.IP || '127.0.0.1');
+console.log(`Running on ${address} with port ${port}`)
